@@ -2,19 +2,6 @@
 import streamlit as st
 import random
 
-[theme]
-primaryColor = "#F63366"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F2F6"
-textColor = "#262730"
-font = "sans serif"
-
-[server]
-headless = true
-
-[client]
-favicon = "dice_icon.png"
-
 # Title and subtitle
 st.title("🎲 Dice Roller 1")
 st.subheader("Roll a die with values: 0, 2, 4, 6, 8, 10")
@@ -23,12 +10,3 @@ st.subheader("Roll a die with values: 0, 2, 4, 6, 8, 10")
 if st.button("Roll the Dice"):
     result = random.choice([0, 2, 4, 6, 8, 10])
     st.success(f"You rolled a **{result}**!")
-
-# Title and subtitle
-st.title("🎲 Dice Roller 2")
-st.subheader("Roll a die with values: 0, 1, 2")
-
-# Button to trigger roll
-if st.button("Roll the Dice"):
-    dice = random.choice([0, 2, 4, 6, 8, 10])
-    st.success(f"You rolled a **{dice}**!")
