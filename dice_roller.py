@@ -3,8 +3,17 @@ import streamlit as st
 import random
 
 # Title and subtitle
-st.title("🎲 Custom Dice Roller")
+st.title("🎲 Dice Roller 1")
 st.subheader("Roll a die with values: 0, 2, 4, 6, 8, 10")
+
+# Button to trigger roll
+if st.button("Roll the Dice"):
+    result = random.choice([0, 2, 4, 6, 8, 10])
+    st.success(f"You rolled a **{result}**!")
+
+# Title and subtitle
+st.title("🎲 Dice Roller 2")
+st.subheader("Roll a die with values: 0, 1, 2")
 
 # Button to trigger roll
 if st.button("Roll the Dice"):
