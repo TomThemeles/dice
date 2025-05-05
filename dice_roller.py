@@ -17,5 +17,5 @@ st.subheader("Roll a die with values: 0, 1, 2")
 
 # Button to trigger roll
 if st.button("Roll the Dice"):
-    result = random.choice([0, 2, 4, 6, 8, 10])
-    st.success(f"You rolled a **{result}**!")
+    dice = random.choice([0, 2, 4, 6, 8, 10])
+    st.success(f"You rolled a **{dice}**!")
