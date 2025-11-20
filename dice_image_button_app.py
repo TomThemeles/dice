@@ -29,25 +29,10 @@ img_url = pil_to_base64(img)
 
 st.title("🎲 Custom Dice Roller (Image Button)")
 
-# HTML-based image button
-with st.form("image_form", clear_on_submit=True):
-    st.markdown(f'''
-        <style>
-        .img-button {{
-            border: none;
-            background: none;
-            padding: 0;
-        }}
-        .img-button img {{
-            width: 100px;
-        }}
-        </style>
-        <button type="submit" class="img-button">
-            <img src="{img_url}" alt="Roll Dice">
-        </button>
-    ''', unsafe_allow_html=True)
-    submitted = st.form_submit_button()
+# Display the roll button image
+st.markdown(f'<div style="text-align: center;"><img src="{img_url}" alt="Roll Dice" style="width: 100px; margin-bottom: 10px;"></div>', unsafe_allow_html=True)
 
-if submitted:
+# Use a regular button instead of form
+if st.button("🎲 Roll Dice", use_container_width=True, type="primary"):
     result = random.choice(DICE_VALUES)
     st.success(f"You rolled a **{result}**!")
